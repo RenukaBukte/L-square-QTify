@@ -11,9 +11,11 @@
   padding-left: 16px;
   gap: 10px;
   background-color:var(--color-black);
-  :hover {
-    cursor: pointer;
-  }
+  color: var(--color-primary);
+  font-family: var(--font-poppins);
+}
+.button:hover {
+  cursor: pointer;
 }
 .buttonText {
     font-weight: 600;
@@ -23,4 +25,9 @@
     align-items: center;
     text-align: center;
     color: var(--color-primary);
+    font-family: var(--font-poppins);
+    background-color:var(--color-black);
+}
+.buttonText:hover {
+    cursor: pointer;
 }
