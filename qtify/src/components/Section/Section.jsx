@@ -34,8 +34,13 @@ function Section({title="Top Albums"}) {
         <span className={styles.title}>{title}</span>
         <button className={styles.collapse_btn}>Collapse</button>
         </div>
-      <div className={styles.items_container} >
+      <div key="top" className={styles.items_container} >
         {items.map((item) => (
+          <Card key={item.id} title={item.title} image={item.image} followers={item.follows} />
+        ))}
+      </div>
+      <div key="new" className={styles.items_container} >
+        {newAlbums.map((item) => (
           <Card key={item.id} title={item.title} image={item.image} followers={item.follows} />
         ))}
       </div>
