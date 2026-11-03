@@ -6,6 +6,7 @@ import { Grid } from "@mui/material";
 
 function Section({title="Top Albums"}) {
   const [items, setItems] = useState([]);
+  const [newAlbums, setNewAlbums] = useState([]); 
 
   useEffect(() => {
     // Fetch data from the API when the component mounts
@@ -18,7 +19,10 @@ function Section({title="Top Albums"}) {
       const response = await axios.get("https://qtify-backend.labs.crio.do/albums/top");
       console.log("Fetched data:", response.data);
       setItems(response.data);
-       return await response.data;
+
+      const newAlbumsRes = await axios.get("https://qtify-backend.labs.crio.do/albums/new");
+      setNewAlbums(newAlbumsRes.data);
+       
     }catch(error){
         // Handle errors here
         console.error("Error fetching data:", error);
