@@ -49,3 +49,20 @@
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
+.tab{
+font-family: var(--font-poppins);
+font-weight: 600;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0px;
+color: var(--color-white) !important;
+}
+
+.MuiButtonBase-root,.MuiTab-root {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: var(--color-white) !important;
+}

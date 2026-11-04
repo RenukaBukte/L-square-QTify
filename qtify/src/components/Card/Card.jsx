@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import Chip from '@mui/material/Chip';
 
-function Card({image, followers=0, title}) {
+function Card({image, followers=0, title,likes}) {
   return (
     <div className={styles.card}>
         <img src={image}
@@ -13,7 +13,7 @@ function Card({image, followers=0, title}) {
         />
         <div style={{ background: 'var(--color-white)',width: 159,height: 23,borderBottomLeftRadius: 10, borderBottomRightRadius : 10, fontFamily: 'var(--font-poppins)',fontWeight: 400,fontSize: "10px", display: 'flex', justifyContent: 'flex-start', alignItems: 'center' ,padding:'6px 0 6px 1px'}}>
       {/* <span style={{ padding: '6px', borderRadius: 10, background: 'var(--color-black)',color: 'var(--color-white)' }}>100 Follows</span> */}
-      <Chip size="small" label={`${followers} Follows`}   sx={{
+      <Chip size="small" label={`${followers}` > 0  ? `${followers} Follows` : `${likes} Likes`}   sx={{
     background  : 'var(--color-black)',
     '& .MuiChip-label': {
       display: 'block',

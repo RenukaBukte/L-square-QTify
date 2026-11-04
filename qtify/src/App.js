@@ -10,6 +10,7 @@ import axios from "axios";
 function App() {
   const [items, setItems] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
+  const [song, setSong] = useState([]);
   useEffect(() => {
     // Fetch data from the API when the component mounts
     fetchData();
@@ -24,6 +25,9 @@ function App() {
 
       const newAlbumsRes = await axios.get("https://qtify-backend.labs.crio.do/albums/new");
       setNewAlbums(newAlbumsRes.data);
+
+      const songRes = await axios.get("https://qtify-backend.labs.crio.do/songs");
+      setSong(songRes.data);
        
     }catch(error){
         // Handle errors here
@@ -36,8 +40,9 @@ function App() {
       <BrowserRouter>
       <Navbar />
       <Hero />
-      <Section title="Top Albums" items={items} />
-      <Section title="New Albums" items={newAlbums} />
+      <Section title="Top Albums" items={items} showAll={true} />
+      <Section title="New Albums" items={newAlbums} showAll={true} />
+      <Section title="Songs" items={song} tabs={true} />
       <Routes>  
         <Route exact path="/" component={Hero} />  
       </Routes>
