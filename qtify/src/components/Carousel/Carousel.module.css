@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.leftNavigation,
+.rightNavigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.leftNavigation {
+  left: 0px;
+}
+
+.rightNavigation {
+  right: 0px;
+}
